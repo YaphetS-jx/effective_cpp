@@ -1,22 +1,25 @@
 #!/bin/bash
 
-# Check if exactly one argument (the file name) is provided.
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <filename.cpp>"
+# Check if at least one argument (the file names) is provided.
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 <filename1.cpp> <filename2.cpp> ..."
     exit 1
 fi
 
-# Define the source file path.
-SOURCE_FILE="src/$1"
+# Define the source files path.
+SOURCE_FILES=""
+for FILE in "$@"; do
+    SOURCE_FILE="src/$FILE"
+    # Verify that the source file exists.
+    if [ ! -f "$SOURCE_FILE" ]; then
+        echo "Error: File '$SOURCE_FILE' not found!"
+        exit 1
+    fi
+    SOURCE_FILES="$SOURCE_FILES $SOURCE_FILE"
+done
 
-# Verify that the source file exists.
-if [ ! -f "$SOURCE_FILE" ]; then
-    echo "Error: File '$SOURCE_FILE' not found!"
-    exit 1
-fi
-
-# Compile the source file using g++ and output the executable named 'test'.
-g++ -o test "$SOURCE_FILE"
+# Compile the source files using g++ and output the executable named 'test'.
+g++ -o test $SOURCE_FILES
 
 # Check if the compilation was successful.
 if [ "$?" -eq 0 ]; then
@@ -26,5 +29,5 @@ else
     exit 1
 fi
 
-# run the executable
+# Run the executable
 ./test
