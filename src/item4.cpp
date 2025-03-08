@@ -1,5 +1,5 @@
 #include <iostream>
-#include "item4_file1.h"
+#include "item4.h"
 #include "item4_file2.h"
 
 
@@ -22,6 +22,7 @@ Directory tmpDir;
 Directory tmpDir2(1);
 
 int main () {
+    std::cout << "----------------- test -----------------" << std::endl;
     FileSystem fs;
 
     // fs is initialized now, so this will be 100

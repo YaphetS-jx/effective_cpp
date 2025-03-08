@@ -29,6 +29,7 @@ public:
 
 
 int main() {
+    std::cout << "----------------- test -----------------" << std::endl;
     BuyTransaction b;
     return 0;
 }

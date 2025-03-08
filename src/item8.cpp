@@ -93,10 +93,12 @@ public:
 
 
 int main() {
+    std::cout << "----------------- test -----------------" << std::endl;
     // 1 exception propagating
     // meaning the exception thrown will keep propagating (finding the function calls it) until it is caught
     exception_test();
     
+    std::cout << "----------------- test -----------------" << std::endl;
     // 2 exceptions propagating (not caught) at the same time will terminate the program
     exception_test2();
 

@@ -1,3 +1,4 @@
+#include <iostream>
 
 class A {
 public:
@@ -43,6 +44,7 @@ public:
 
 
 int main () {
+    std::cout << "----------------- test -----------------" << std::endl;
     A a(1);
 
     // this will fail because copy constructor is deleted

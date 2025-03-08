@@ -29,6 +29,7 @@ public:
 };
 
 int main() {
+    std::cout << "----------------- test -----------------" << std::endl;
     A a1(2);
     std::cout << "a1 = " << a1.x << std::endl;
 

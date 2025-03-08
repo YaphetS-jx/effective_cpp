@@ -23,6 +23,7 @@ public:
 
 
 int main() {
+    std::cout << "----------------- test -----------------" << std::endl;
     Rational r1, r2;
     r1 = r2 = 3.5;
     std::cout << "r1: " << r1.val << std::endl;

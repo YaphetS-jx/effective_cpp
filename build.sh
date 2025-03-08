@@ -1,15 +1,20 @@
 #!/bin/bash
 
-# Check if at least one argument (the file names) is provided.
-if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 <filename1.cpp> <filename2.cpp> ..."
+# Check if at least two arguments (the folder name and file names) are provided.
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 <folder_name> <filename1.cpp> <filename2.cpp> ..."
     exit 1
 fi
+
+# Define the folder name.
+FOLDER_NAME=$1
+# shift to next argument
+shift
 
 # Define the source files path.
 SOURCE_FILES=""
 for FILE in "$@"; do
-    SOURCE_FILE="src/$FILE"
+    SOURCE_FILE="$FOLDER_NAME/$FILE"
     # Verify that the source file exists.
     if [ ! -f "$SOURCE_FILE" ]; then
         echo "Error: File '$SOURCE_FILE' not found!"

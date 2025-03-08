@@ -65,27 +65,27 @@ public:
 
 int main() {
 
-    std::cout << "Example 1" << std::endl;
+    std::cout << "----------------- test -----------------" << std::endl;    
     // this will call both destructors
     AtomicClock *ac = new AtomicClock();
     delete ac;
 
-    std::cout << "Example 2" << std::endl;
+    std::cout << "----------------- test -----------------" << std::endl;
     // this will only call TimeKeeper destructor
     TimeKeeper *tk = new AtomicClock();
     delete tk;
 
-    std::cout << "Example 3" << std::endl;
+    std::cout << "----------------- test -----------------" << std::endl;
     // this will call both destructors
     AtomicClock2 *ac2 = new AtomicClock2();
     delete ac2;
 
-    std::cout << "Example 4" << std::endl;
+    std::cout << "----------------- test -----------------" << std::endl;
     // this will call both destructors
     TimeKeeper2 *tk2 = new AtomicClock2();
     delete tk2;
 
-    std::cout << "Example 5" << std::endl;
+    std::cout << "----------------- test -----------------" << std::endl;
     // this will call both destructors
     AtomicClock3 *ac3 = new AtomicClock3();
     ac3->print();

@@ -31,6 +31,7 @@ void foo() {
 
 int main() {
 
+    std::cout << "----------------- test -----------------" << std::endl;
     /* Resource Acquisition Is Initialization (RAII) is a C++ programming idiom that ties the lifetime 
     of a resource that must be acquired before use to the lifetime of an object. it will automatically 
     delete the required resources when auto_ptr is destroyed (go out of scope). */
@@ -48,6 +49,7 @@ int main() {
         // std::unique_ptr<Investment> pInv4(pInv2); // error
     }
     
+    std::cout << "----------------- test -----------------" << std::endl;
     /* Reference-counting Smart Pointer (RCSP) supports multiple ownerships and deletes the resources when
     nobody is pointing to it any longer.  */
     {
@@ -63,6 +65,7 @@ int main() {
         pInv2->print(); // now it's 14
     }
 
+    std::cout << "----------------- test -----------------" << std::endl;
     /* shared_ptr and unique_ptr use default destructors of the type. 
     don't use them with dynamically allocated arrays, use std::vector instead. */
     {

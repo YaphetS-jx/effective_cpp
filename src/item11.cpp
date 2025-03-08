@@ -65,7 +65,7 @@ Widget& Widget::operator=(const Widget& rhs) {
 }
 
 int main () {
-
+    std::cout << "----------------- test -----------------" << std::endl;
     // base class reference refers to a derived class object
     Derived d;
     Base& b = d;

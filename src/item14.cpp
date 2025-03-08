@@ -61,12 +61,14 @@ public:
 
 int main() {
 
+    std::cout << "----------------- test -----------------" << std::endl;
     // try RAII
     {
         Mutex m;
         Lock l(&m);
     }
 
+    std::cout << "----------------- test -----------------" << std::endl;
     // try functor 
     {
         Multiply multiply2(2);
@@ -75,6 +77,7 @@ int main() {
         std::cout << "3 * 10 = " << multiply3(10) << std::endl;
     }
     
+    std::cout << "----------------- test -----------------" << std::endl;
     // try functor as a deleter
     {
         // here new int(100) is only 1 int, initialized to 100

@@ -42,6 +42,7 @@ private:
 };
 
 int main () {
+    std::cout << "----------------- test -----------------" << std::endl;
     std::vector<int> vec = {1,2,3};    
     NamedObject no1("no1", 1, vec);
     no1.print();

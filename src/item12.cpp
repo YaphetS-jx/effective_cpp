@@ -47,6 +47,7 @@ private:
 
 int main() {
 
+    std::cout << "----------------- test -----------------" << std::endl;
     Customer c1("c1");
     Customer c2 = c1;
     c2.print();
