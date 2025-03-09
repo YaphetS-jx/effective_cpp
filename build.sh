@@ -23,8 +23,10 @@ for FILE in "$@"; do
     SOURCE_FILES="$SOURCE_FILES $SOURCE_FILE"
 done
 
+CFLAGS="-std=c++17 -Wall"
+
 # Compile the source files using g++ and output the executable named 'test'.
-g++ -o test $SOURCE_FILES
+g++ $CFLAGS -o test $SOURCE_FILES
 
 # Check if the compilation was successful.
 if [ "$?" -eq 0 ]; then
