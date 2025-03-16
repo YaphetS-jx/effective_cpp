@@ -14,6 +14,8 @@
 #include "auxiliary/date.hpp"
 #include "auxiliary/address.hpp"
 
+// build using  ./build.sh src item31.cpp auxiliary/date.cpp auxiliary/person_handle.cpp auxiliary/person_impl.cpp auxiliary/address.cpp auxiliary/person_interface.cpp auxiliary/person_derive.cpp
+
 // test handle classes
 // here only declare the handle, no link to the implementation
 #include "auxiliary/person_handle.hpp"
