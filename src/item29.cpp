@@ -20,8 +20,8 @@ public:
     }
 };
 
-void swap(PMImpl& a, PMImpl& b) {
-    a.swap(b);
+void swap(std::shared_ptr<PMImpl>& a, std::shared_ptr<PMImpl>& b) {
+    a->swap(*b);
 }
 
 class PrettyMenu {
@@ -72,7 +72,7 @@ void PrettyMenu::changeBackground_strong(std::istream& imgSrc) {
     pNew->bgImage.reset(new Image(imgSrc));
     ++pNew->imageChanges;
     // swap the new data with the old data
-    swap(pImpl.get(), pNew.get());
+    swap(pImpl, pNew);
 }
 
 int main() {
