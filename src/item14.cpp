@@ -1,36 +1,6 @@
 #include <iostream>
 #include <memory> 
-
-class Mutex{};
-
-// this is a RAII class that locks a mutex in its constructor and unlocks it in its destructor
-class Lock{
-public:
-    explicit Lock(Mutex* pm) 
-        : mitexpm(pm) {
-        // lock the mutex
-        lock(mitexpm);
-    }
-
-    ~Lock() {
-        unlock(mitexpm);
-    }
-
-    void lock(Mutex* pm) {
-        std::cout << "Locking the mutex" << std::endl;
-    }
-    void unlock(Mutex* pm) {
-        std::cout << "Unlocking the mutex" << std::endl;
-    }
-
-    // It's meaningless to copy a RAII class or object
-    // delete copy constructor and copy assignment operator
-    Lock(Lock& rhs) = delete;
-    Lock& operator=(Lock& rhs) = delete;
-
-private:
-    Mutex* mitexpm;
-};
+#include "mutex.hpp"
 
 /* Functor is a functor (function object) in C++ is simply a class that overloads the operator() function, 
    allowing instances of the class to be used like a function. While classes are often used as containers
