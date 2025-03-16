@@ -1,5 +1,5 @@
 #include <iostream>
-#include "item30.hpp"
+#include "auxiliary/inline.hpp"
 
 /* Inline function can cause code bloat, so very short functions are prefered. 
    Member functions are inline by default if defined in header file. 
