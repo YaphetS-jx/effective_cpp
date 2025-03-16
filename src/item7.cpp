@@ -1,5 +1,7 @@
 #include <iostream>
 
+// there will be a memory leak here, because the destructor of the base class is not virtual
+// see test 2 
 class TimeKeeper {
 public: 
     TimeKeeper() {};
@@ -16,6 +18,9 @@ public:
     };
 };
 
+/* In case of polymorphism, the destructor should be virtual for base class
+so that the destructor of the most derived class is called depending on the pointer type
+otherwise, only the destructor of the base class is called, leading to memory leak */
 
 class TimeKeeper2 {
 public: 
