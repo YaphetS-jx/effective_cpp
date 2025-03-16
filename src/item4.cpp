@@ -1,11 +1,12 @@
 #include <iostream>
-#include "item4.h"
-#include "item4_file2.h"
+#include "auxiliary/item4.hpp"
+#include "auxiliary/fileSystem.hpp"
 
 
+// build using ./build.sh src item4.cpp auxiliary/fileSystem.cpp
 
 Directory::Directory() {
-    // tfs is declared in item4_file1.h
+    // tfs is declared in item4.hpp
     this->disks = tfs.numDisks();
     std::cout << "disks in Directory is " << disks << std::endl;
     // since tfs is not initialized yet, this will be 0
@@ -17,7 +18,7 @@ Directory::Directory(int s) {
     // here tfs is initialized, so this will be 100
 }
 
-// initialized before tfs in item4_file2.cpp
+// initialized before tfs in fileSystem.cpp
 Directory tmpDir;
 Directory tmpDir2(1);
 

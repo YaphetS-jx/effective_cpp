@@ -1,3 +1,5 @@
+#pragma once
+
 class Directory {
 public:
     int disks;
@@ -6,5 +8,4 @@ public:
     // even it's empty, it's still a definition
     
     Directory(int s);
-    
 };

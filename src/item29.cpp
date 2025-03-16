@@ -1,6 +1,8 @@
 #include <iostream>
 #include <memory>
-#include "mutex.hpp"
+#include "auxiliary/mutex.hpp"
+
+// build using ./build.sh src item29.cpp
 
 class Image {
 public:

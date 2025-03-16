@@ -1,6 +1,6 @@
 #include <iostream>
 #include <memory> 
-#include "mutex.hpp"
+#include "auxiliary/mutex.hpp"
 
 /* Functor is a functor (function object) in C++ is simply a class that overloads the operator() function, 
    allowing instances of the class to be used like a function. While classes are often used as containers
