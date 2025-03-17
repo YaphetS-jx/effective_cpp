@@ -1,7 +1,12 @@
 #include <iostream>
 #include <memory>
 
-/* Never redefine an inherited non-virtual function, leading to inconsistent behavior */
+/* Never redefine an inherited non-virtual function, leading to inconsistent behavior 
+   Virtual functions are dynamically bound, while non-virtual functions are statically bound.
+   Statically  bound: compile-time resolution (function to be called is determined at compile time, the defined type of the object is used)
+   Dynamically bound: runtime resolution (function to be called is determined at runtime, the actual type of the object is used)
+*/
+
 
 class Base {
 public: 
