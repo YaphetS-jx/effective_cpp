@@ -68,6 +68,38 @@ private:
 };
 } // namespace test2
 
+// example of virtual dtor
+namespace test3 {
+class Base {
+public:
+    virtual ~Base() {
+        std::cout << "Base::~Base()" << std::endl;  
+    }
+};
+
+class Derived: public Base {
+public:
+    virtual ~Derived() override {
+        std::cout << "Derived::~Derived()" << std::endl;
+    }
+};
+
+
+class Base1 {
+public:
+    ~Base1() {
+        std::cout << "Base1::~Base1()" << std::endl;  
+    }
+};
+
+class Derived1: public Base1 {
+public:
+    ~Derived1() {
+        std::cout << "Derived1::~Derived1()" << std::endl;
+    }
+};
+} // namespace test3
+
 int main() {
     std::cout << "----------------- test -----------------" << std::endl;
     {
@@ -85,5 +117,12 @@ int main() {
         r->draw(); // this will call Shape::draw(Shape::Red)
         c->draw(); // this will call Shape::draw(Shape::Red)
     }
+    std::cout << "----------------- test -----------------" << std::endl;
+    {
+        using namespace test3;        
+        std::unique_ptr<Base> p = std::make_unique<Derived>(); // this will call both dtor
+        std::unique_ptr<Base1> p1 = std::make_unique<Derived1>(); // this will only call Base1's dtor
+    }
+
     return 0;
 }
