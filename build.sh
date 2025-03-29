@@ -23,7 +23,7 @@ for FILE in "$@"; do
     SOURCE_FILES="$SOURCE_FILES $SOURCE_FILE"
 done
 
-CFLAGS="-std=c++17 -Wall"
+CFLAGS="-std=c++17 -O3 -Wall -pthread"
 
 # Compile the source files using g++ and output the executable named 'test'.
 g++ $CFLAGS -o test $SOURCE_FILES
